@@ -1,0 +1,313 @@
+/* ============================================
+   DOWNLOAD CV - VERSION STICKY CORRIGÉE
+   ============================================ */
+
+.download-section {
+    position: relative; /* Changé de sticky à relative */
+    z-index: 100; /* Inférieur à la nav (1000) mais supérieur au contenu */
+    background: linear-gradient(180deg, 
+        rgba(15, 15, 15, 0.98) 0%, 
+        rgba(15, 15, 15, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 80px; /* Espace pour la nav fixe */
+    transition: all 0.3s ease;
+}
+
+
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* État compact */
+.download-section.is-sticky.compact {
+    padding: 0.5rem 0;
+}
+
+.download-section.is-sticky.compact .download-container {
+    padding: 0.75rem 2rem;
+}
+
+.download-section.is-sticky.compact .download-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.download-section.is-sticky.compact .download-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.download-section.is-sticky.compact .download-title {
+    font-size: 1rem;
+}
+
+.download-section.is-sticky.compact .download-subtitle {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.download-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    transition: all 0.3s ease;
+}
+
+/* Partie gauche - Info */
+.download-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.download-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF6B6B;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.download-icon svg {
+    width: 28px;
+    height: 28px;
+    transition: all 0.3s ease;
+}
+
+.download-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.download-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.download-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+/* Bouton de téléchargement */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.download-btn:hover .btn-icon {
+    transform: translateY(3px);
+}
+
+/* Animation au clic */
+.download-btn.downloading {
+    pointer-events: none;
+}
+
+.download-btn.downloading .btn-text {
+    opacity: 0;
+}
+
+.download-btn.downloading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Barre de progression */
+.download-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.download-btn.downloading::before {
+    animation: progress 2s ease-out forwards;
+}
+
+@keyframes progress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Toast de confirmation */
+.download-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: rgba(78, 205, 196, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(78, 205, 196, 0.3);
+    transform: translateX(150%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10000;
+}
+
+.download-toast.show {
+    transform: translateX(0);
+}
+
+.toast-icon {
+    width: 28px;
+    height: 28px;
+    background: white;
+    color: #4ECDC4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.toast-message {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .download-section {
+        margin-top: 60px;
+    }
+    
+    .download-section.is-sticky {
+        top: 60px;
+    }
+    
+    .download-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .download-icon {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .download-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .download-title {
+        font-size: 1rem;
+    }
+    
+    .download-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .download-btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+    
+    .download-toast {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-content {
+        gap: 0.75rem;
+    }
+    
+    .download-subtitle {
+        display: none;
+    }
+    
+    .btn-text {
+        display: none;
+    }
+    
+    .download-btn::after {
+        content: 'CV';
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+}

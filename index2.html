@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiculum Vitae</title>
+    <link rel="stylesheet" href="./css/styles2.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/download-cv.css">
+    <link rel="shortcut icon" href="./images/logoportfolio.jpg">
+</head>
+<body class="page-cv">
+
+    <!-- Navigation sera injectée ici -->
+    <div class="no-print" id="nav-container"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot no-print" id="cursorDot"></div>
+    <div class="cursor-outline no-print" id="cursorOutline"></div>
+
+    <div class="no-print" id="download-container"></div>
+    
+    <!-- Contenu principal de votre CV -->
+    <main class="cv-main" style="margin-top: 20px;"> <!-- Ajuster selon la hauteur combinée nav + download -->
+
+        <div id="CV" class="a4-page">
+            <div style="display: flex; height: 100%;">
+                <!-- Sidebar -->
+                <div class="sidebar" style="width: 72mm;">
+                    <!-- Photo -->
+                    <div style="width: 35mm; height: 35mm; margin: 0 auto 4mm; border-radius: 50%; overflow: hidden; border: 3px solid white; background: #f3f4f6;">
+                        <img src="./images/PDP.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Photo">
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="section">
+                        <div class="section-title">Contact</div>
+                        <div class="text-xs-custom text-gray-800 space-y-1mm">
+                            <div style="display: flex; align-items: center; gap: 2mm;">
+                                <i class="fas fa-phone" style="font-size: 8pt; width: 4mm;"></i>
+                                <span>+261 32 48 709 78 </span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 2mm;">
+                                <i class="fas fa-envelope" style="font-size: 8pt; width: 4mm;"></i>
+                                <span>truilinoliang@gmail.com</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 2mm;">
+                                <i class="fas fa-map-marker-alt" style="font-size: 8pt; width: 4mm;"></i>
+                                <span>Fianarantsoa,Madagascar</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 2mm;">
+                                <i class="fab fa-linkedin" style="font-size: 8pt; width: 4mm;"></i>
+                                <span>linkedin.com/monprofil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compétences -->
+                    <div class="section">
+                        <div class="section-title">Compétences</div>
+                        <div class="space-y-2mm text-xs-custom">
+                            <div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Gestion du temps</span>
+                                </div>
+                                <div class="skill-bar-v"><div class="skill-fill-v" style="width: 90%;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Polyvalence</span>
+                                </div>
+                                <div class="skill-bar-v"><div class="skill-fill-v" style="width: 85%;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Curiosité</span>
+                                </div>
+                                <div class="skill-bar-v"><div class="skill-fill-v" style="width: 95%;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Résolution de problèmes</span>
+                                </div>
+                                <div class="skill-bar-v"><div class="skill-fill-v" style="width: 80%;"></div></div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Ponctualité</span>
+                                </div>
+                                <div class="skill-bar-v"><div class="skill-fill-v" style="width: 100%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Langues -->
+                    <div class="section">
+                        <div class="section-title">Langues</div>
+                        <div class="text-xs-custom space-y-1mm">
+                            <div><strong>Malgache</strong> : Langue maternelle</div>
+                            <div><strong>Français</strong> : Courant (C1)</div>
+                            <div><strong>Anglais</strong> : Débutant (A1)</div>
+                        </div>
+                    </div>
+
+                    <!-- Logiciels -->
+                    <div class="section">
+                        <div class="section-title">Logiciels</div>
+                        <div class="text-xs-custom space-y-1mm">
+                            <div>• Word / Excel</div>
+                            <div>• Photoshop / Canva</div>
+                            <div>• CapCut / InShot</div>
+                            <div>• Suite Google Business</div>
+                            <div>• Notion</div>
+                        </div>
+                    </div>
+
+                    <!-- compétencs techniques -->
+                    <div class="section">
+                        <div class="section-title">Compétences techniques</div>
+                        <div class="text-xs-custom space-y-1mm">
+                            <div><strong>Langages Web</strong> : HTML, CSS</div>
+                            <div><strong>Outils</strong> : Github, VS Code</div>
+                            <div><strong>Autres</strong> : SEO, UI/UX</div>
+                        </div>
+                    </div>
+
+                    <!-- Intérêts -->
+                    <div class="section">
+                        <div class="section-title">Intérêts</div>
+                        <div class="text-xs-custom space-y-1mm">
+                            <div>• Musique</div>
+                            <div>• Basketball</div>
+                            <div>• Culture japonaise</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenu Principal -->
+                <div style="width: 138mm; padding: 12mm 10mm;">
+                    <!-- Header -->
+                    <div style="margin-bottom: 6mm;">
+                        <h1 class="name">TOTO <br>Liang Wenceslas Truilino</h1>
+                        <div style="width: 20mm; height: 1mm; background: #7dd3c0; margin-bottom: 2mm;"></div>
+                        <div style="font-size: 10pt; color: #6b7280; text-transform: uppercase; letter-spacing: 1px;">Titulaire du poste</div>
+                    </div>
+
+                    <!-- Profil -->
+                    <div style="margin-bottom: 5mm;">
+                        <div class="section-title">Profil</div>
+                        <p class="text-xs-custom text-gray-700 text-justify leading-snug-custom" style="color: #1f2937;">
+                            Étudiant en Licence d'Informatique à Fianarantsoa. J'aime le travail d'équipe et je suis très dynamique.
+                        </p>
+                    </div>
+
+                    <!-- Formation -->
+                    <div style="margin-bottom: 5mm;">
+                        <div class="section-title">Formation</div>
+
+                        <div style="margin-bottom: 3mm;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                <div style="font-weight: 600; font-size: 10pt; color: #1f2937;">Baccalauréat Scientifique</div>
+                                <div style="font-size: 8pt; color: #9ca3af;">2025</div>
+                            </div>
+                            <div style="font-size: 9pt; color: #059669; font-weight: 500; margin-bottom: 1mm;">Lycée Catholique Notre Dame de Lourdes</div>
+                        </div>
+
+                        <div style="margin-bottom: 3mm;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                <div style="font-weight: 600; font-size: 10pt; color: #1f2937;">Brevet d'Etude du Premier Cycle</div>
+                                <div style="font-size: 8pt; color: #9ca3af;">2022</div>
+                            </div>
+                            <div style="font-size: 9pt; color: #059669; font-weight: 500; margin-bottom: 1mm;">Lycée Catholique Notre Dame de Lourdes</div>
+                        </div>
+                    </div>
+
+                    <!-- Autres diplomes -->
+                    <div style="margin-bottom: 5mm;">
+                        <div class="section-title">Autres Diplômes</div>
+
+                        <div style="margin-top: 3mm;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                <div style="font-weight: 600; font-size: 10pt; color: #1f2937;">DELF B2</div>
+                                <div style="font-size: 8pt; color: #9ca3af;">2022</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 3mm;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                <div style="font-weight: 600; font-size: 10pt; color: #1f2937;">DELF B1</div>
+                                <div style="font-size: 8pt; color: #9ca3af;">2021</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expériences -->
+                    <div>
+                        <div class="section-title">Expériences Professionnelles</div>
+
+                        <div style="margin-bottom: 4mm;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1mm;">
+                                <div style="font-weight: 600; font-size: 10pt; color: #1f2937;">Bénévolat – Hôtelerie</div>
+                                <div style="font-size: 8pt; color: #9ca3af;">Dec 2024</div>
+                            </div>
+                            <div style="font-size: 9pt; color: #059669; font-weight: 500; margin-bottom: 1mm;">Fenerive-Est</div>
+                            <ul class="text-xs-custom text-gray-700 leading-snug-custom" style="padding-left: 3mm; list-style: disc; color: #1f2937;">
+                                <li style="margin-bottom: 0.5mm;">Acceuil/récéption de clients</li>
+                                <li style="margin-bottom: 0.5mm;">Organisation et gestion des chambres</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1mm;">
+                                <div style="font-weight: 600; font-size: 10pt; color: #1f2937;">Bénévolat – Services de restauration</div>
+                                <div style="font-size: 8pt; color: #9ca3af;">Juil-Août 2024</div>
+                            </div>
+                            <div style="font-size: 9pt; color: #059669; font-weight: 500; margin-bottom: 1mm;">Fenerive-Est</div>
+                            <ul class="text-xs-custom text-gray-700 leading-snug-custom" style="padding-left: 3mm; list-style: disc; color: #1f2937;">
+                                <li style="margin-bottom: 0.5mm;">Aménagement et décoration d'espace de fêtes</li>
+                                <li>Service à table, débarrassage et nettoyage de tables, travail en équipe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./js/script2.js"></script>
+    <script src="./js/navigation.js"></script>
+
+</body>
+</html>

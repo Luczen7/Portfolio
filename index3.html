@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets | Portfolio</title>
+    <link rel="stylesheet" href="./fonts/all.min.css">
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./css/styles3.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="shortcut icon" href="./images/logoportfolio.jpg">
+</head>
+<body>
+
+     <!-- Navigation sera injectée ici -->
+    <div id="nav-container"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Mes Projets</h1>
+        <p>Découvrez mes réalisations en développement web, design et création digitale</p>
+    </section>
+
+    <!-- Filter Buttons -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-container" id="projets">
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card" data-category="web">
+                <div style="position: relative; overflow: hidden;">
+                    <img src="./images/project-ecommerce.jpg" alt="Projet 1" class="project-image" onclick="openLightbox(this)">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="Voir le site">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" title="Code source">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-category">Développement Web</div>
+                    <h3 class="project-title">Site E-commerce</h3>
+                    <p class="project-description">Plateforme de vente en ligne avec panier d'achat et paiement sécurisé.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-category="design">
+                <div style="position: relative; overflow: hidden;">
+                    <img src="./images/fitnessApp.png" alt="Projet 2" class="project-image" onclick="openLightbox(this)">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="Voir le projet">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" title="Behance">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-category">UI/UX Design</div>
+                    <h3 class="project-title">Redesign Application</h3>
+                    <p class="project-description">Refonte complète de l'interface utilisateur d'une app de fitness.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Photoshop</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" data-category="mobile">
+                <div style="position: relative; overflow: hidden;">
+                    <img src="./images/Appmeteo.png" alt="Projet 3" class="project-image" onclick="openLightbox(this)">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="Télécharger">
+                                <i class="fas fa-download"></i>
+                            </a>
+                            <a href="#" class="project-link" title="Code source">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-category">Application Mobile</div>
+                    <h3 class="project-title">App Météo</h3>
+                    <p class="project-description">Application météo avec géolocalisation et prévisions en temps réel.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" data-category="web">
+                <div style="position: relative; overflow: hidden;">
+                    <img src="./images/portfolio-photographe.png" alt="Projet 4" class="project-image" onclick="openLightbox(this)">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="Voir le site">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" title="Code source">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-category">Développement Web</div>
+                    <h3 class="project-title">Portfolio Photographe</h3>
+                    <p class="project-description">Site portfolio responsive pour un photographe professionnel.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card" data-category="web">
+                <div style="position: relative; overflow: hidden;">
+                    <img src="./images/project-dashboard.jpg" alt="Projet 5" class="project-image" onclick="openLightbox(this)">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link" title="Voir le site">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link" title="Code source">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-category">Développement Web</div>
+                    <h3 class="project-title">Dashboard Admin</h3>
+                    <p class="project-description">Tableau de bord administrateur avec graphiques et statistiques.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <span class="lightbox-close" onclick="closeLightbox()">
+                <i class="fas fa-times"></i>
+            </span>
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+
+    <script src="./js/script3.js"></script>
+    <script src="./js/navigation.js"></script>
+</body>
+</html>

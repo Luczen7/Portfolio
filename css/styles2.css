@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #1a1a2e;
+    color: #f7f7f7;
+    overflow-x: hidden;
+    line-height: 1.6;
+    cursor: none;
+}
+
+
+
+/* Format A4 strict */
+.a4-page {
+    width: 210mm;
+    height: 297mm;
+    background: white;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+/* CURSEUR PERSONNALISÉ */
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #FF6B6B;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 107, 107, 0.5);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+.cursor-outline.hover {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-color: #FF6B6B;
+}
+
+.btn-retour {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.btn-retour:hover {
+  background-color: #0056b3;
+}
+
+
+.sidebar {
+    background: #7dd3c0;
+    height: 100%;
+    padding: 15mm 8mm;
+}
+
+.name {
+    font-family: 'Playfair Display', serif;
+    font-size: 28pt;
+    line-height: 1.1;
+    color: #1f2937;
+    margin-bottom: 2mm;
+}
+
+.section {
+    margin-bottom: 2mm;
+}
+
+.section-title {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 1mm;
+    margin-bottom: 2mm;
+    color: #1f2937;
+}
+
+.skill-bar-v {
+    height: 3px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 2px;
+    margin-top: 1mm;
+}
+
+.skill-fill-v {
+    height: 100%;
+    background: #1e3a8a;
+    border-radius: 2px;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+    
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    body {
+        background: white;
+        margin: 0;
+        padding: 0;
+        height: 297mm; /* Force une seule page */
+        overflow: hidden;
+    }
+    
+    .a4-page {
+        width: 210mm;
+        height: 297mm;
+        box-shadow: none;
+        margin: 0;
+        page-break-after: avoid !important; /* Empêche saut de page */
+        page-break-inside: avoid;
+        overflow: hidden; /* Coupe le contenu si trop long */
+    }
+    
+    /* Réduire légèrement si nécessaire pour tenir sur une page */
+    .a4-page {
+        transform: scale(0.98);
+        transform-origin: top center;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+    
+    /* Cacher tout overflow */
+    main, body, html {
+        height: 297mm !important;
+        max-height: 297mm !important;
+        overflow: hidden !important;
+    }
+}
+
+.text-xs-custom { font-size: 8.5pt; line-height: 1.3; }
+.text-sm-custom { font-size: 9pt; line-height: 1.3; }
+.text-base-custom { font-size: 10pt; line-height: 1.3; }
+
+.leading-tight-custom { line-height: 1.2; }
+.leading-snug-custom { line-height: 1.3; }
+
+.mb-1mm { margin-bottom: 1mm; }
+.mb-2mm { margin-bottom: 2mm; }
+.mb-3mm { margin-bottom: 3mm; }
+
+.gap-1mm { gap: 1mm; }
+.gap-2mm { gap: 2mm; }
+/* HEADER STYLES - Barre avec boutons à gauche */
+header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(125, 211, 192, 0.3);
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-start; /* Aligne tout à gauche */
+    align-items: center;
+    gap: 20px;
+}
+
+/* Logo à gauche */
+.nav-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #7dd3c0;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: #fff;
+}
+
+/* Bouton Imprimer */
+.print-btn {
+    background: linear-gradient(135deg, #7dd3c0 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(125, 211, 192, 0.3);
+}
+
+.print-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(125, 211, 192, 0.4);
+}
+
+.print-btn i {
+    font-size: 0.9rem;
+}
+
+/* Bouton Retour */
+.btn-retour {
+    background: transparent;
+    color: #7dd3c0;
+    border: 2px solid #7dd3c0;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-retour:hover {
+    background: #7dd3c0;
+    color: #1a1a2e;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header .container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-logo {
+        font-size: 1rem;
+    }
+
+    .print-btn, .btn-retour {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}
